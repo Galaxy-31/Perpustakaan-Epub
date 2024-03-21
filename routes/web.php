@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,30 +20,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes([
+    'register' => false
+]);
 
-// autentikasi Users
-Route::middleware('auth')->group(function () {
-
-    // menu utama
+Route::group(['middleware' => ['auth']], function ()
+{
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::group(['middleware' => ['role:admin']], function ()
+    {
 
-    // hanya admin yang bisa akses
-    Route::middleware('role:Admin')->group(function () {
-
-        Route::get('/admin', function () {
-            return view('vendor.laratrust.admin');
-        })->name('admin');
-
-    });
-
-    // hanya teller yang bisa akses
-    Route::middleware('role:Teller')->group(function () {
-
-        Route::get('/teller', function () {
-            return view('vendor.laratrust.teller');
-        })->name('teller');
+        });
+    Route::group(['middleware' => ['role:petugas|admin']], function ()
+    {
 
     });
+    Route::group(['middleware' => ['role:user|admin']], function ()
+    {
 
+    });
 });
