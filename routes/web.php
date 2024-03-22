@@ -20,9 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes([
-    'register' => false
-]);
+Auth::routes();
 
 Route::group(['middleware' => ['auth']], function ()
 {
@@ -35,7 +33,7 @@ Route::group(['middleware' => ['auth']], function ()
     {
 
     });
-    Route::group(['middleware' => ['role:user|admin']], function ()
+    Route::group(['middleware' => ['role:user|register']], function ()
     {
 
     });

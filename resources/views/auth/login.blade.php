@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,8 @@
         Login | Perpustakaan Epub
     </title>
     <!--     Fonts and icons     -->
-    <link href="{{asset('asset/https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700')}}" rel="stylesheet" />
+    <link href="{{ asset('asset/https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700') }}"
+        rel="stylesheet" />
     <!-- Nucleo Icons -->
     <link href="{{ asset('asset/assets/css/nucleo-icons.css') }}" rel="stylesheet" />
     <link href="{{ asset('asset/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
@@ -40,28 +40,30 @@
                                         @csrf
 
                                         <div class="mb-3">
-                                            <input type="email" class="form-control form-control-lg @error('email') has-error @enderror"
+                                            <input type="email"
+                                                class="form-control form-control-lg @error('email') has-error @enderror"
                                                 placeholder="Email" aria-label="Email" name="email"
                                                 value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                                @if(Session::has('error'))
+                                            @if (Session::has('error'))
                                                 <div class="alert alert-danger">
-                                                {{ Session::get('error')}}
+                                                    {{ Session::get('error') }}
                                                 </div>
-                                                @endif
+                                            @endif
                                         </div>
                                         <div class="mb-3">
-                                            <input type="password" class="form-control form-control-lg @error('password') has-error @enderror"
-                                                placeholder="Password" aria-label="Password" name="password"
-                                                required autocomplete="current-password">
-                                                @if(Session::has('error'))
+                                            <input type="password"
+                                                class="form-control form-control-lg @error('password') has-error @enderror"
+                                                placeholder="Password" aria-label="Password" name="password" required
+                                                autocomplete="current-password">
+                                            @if (Session::has('error'))
                                                 <div class="alert alert-danger">
-                                                {{ Session::get('error')}}
+                                                    {{ Session::get('error') }}
                                                 </div>
-                                                @endif
+                                            @endif
                                         </div>
                                         <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                            {{ old('remember') ? 'checked' : '' }}>
+                                            <input class="form-check-input" type="checkbox" name="remember"
+                                                id="remember" {{ old('remember') ? 'checked' : '' }}>
                                             <label class="form-check-label" for="remember">Ingat Saya</label>
                                         </div>
                                         <div class="text-center">
@@ -75,7 +77,7 @@
                         <div
                             class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
                             <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden"
-                                style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/asset/argon-dashboard-pro/assets/img/signin-ill.jpg');background-size: cover;">
+                                style="background-image: url('asset/../assets/img/team-2.jpg');background-size: cover;">
                                 <span class="mask bg-gradient-primary opacity-6"></span>
                                 <h4 class="mt-5 text-white font-weight-bolder position-relative">"Nama Aplikasi"</h4>
                                 <p class="text-white position-relative">Tentang Aplikasi.</p>
