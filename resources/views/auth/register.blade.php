@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +8,11 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('asset/assets/img/apple-icon.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('asset/assets/img/favicon.png') }}">
     <title>
-        Register | Perpustakaan Epub
+        Register | Name App
     </title>
     <!--     Fonts and icons     -->
-    <link href="{{asset('asset/https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700')}}" rel="stylesheet" />
+    <link href="{{ asset('asset/https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700') }}"
+        rel="stylesheet" />
     <!-- Nucleo Icons -->
     <link href="{{ asset('asset/assets/css/nucleo-icons.css') }}" rel="stylesheet" />
     <link href="{{ asset('asset/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
@@ -32,39 +32,51 @@
                         <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
                             <div class="card card-plain">
                                 <div class="card-header pb-0 text-start">
-                                    <h4 class="font-weight-bolder">Register</h4>
-                                    <p class="mb-0">Silahkan masukkan data diri anda</p>
+                                    <h4 class="font-weight-bolder" class align="center">Register</h4>
+                                    <p class="mb-0" class align="center">Silahkan masukkan data diri anda</p>
                                 </div>
                                 <div class="card-body">
                                     <form role="form" action="{{ route('register') }}" method="POST">
                                         @csrf
 
                                         <div class="mb-3">
-                                            <input id="name" type="text" class="form-control form-control-lg @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
-                                              @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                  <strong>{{ $message }}</strong>
-                                            </span>
-                                               @enderror
-                                        </div>
-                                        <div class="mb-3">
-                                            <input id="email" type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
-                                            @error('email')
-                                              <span class="invalid-feedback" role="alert">
-                                              <strong>{{ $message }}</strong>
-                                              </span>
+                                            <input id="name" type="text"
+                                                class="form-control form-control-lg @error('name') is-invalid @enderror"
+                                                name="name" value="{{ old('name') }}" required autocomplete="name"
+                                                autofocus placeholder="Name">
+                                            @error('name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
                                             @enderror
                                         </div>
                                         <div class="mb-3">
-                                            <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
-                                            @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                            <input id="email" type="email"
+                                                class="form-control form-control-lg @error('email') is-invalid @enderror"
+                                                name="email" value="{{ old('email') }}" required
+                                                autocomplete="email" placeholder="Email">
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
-                                            <input id="password-confirm" type="password" class="form-control form-control-lg" name="password_confirmation" required autocomplete="new-password" placeholder="Confirmation Password">
+                                            <input id="password" type="password"
+                                                class="form-control form-control-lg @error('password') is-invalid @enderror"
+                                                name="password" required autocomplete="new-password"
+                                                placeholder="Password">
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="mb-3">
+                                            <input id="password-confirm" type="password"
+                                                class="form-control form-control-lg" name="password_confirmation"
+                                                required autocomplete="new-password"
+                                                placeholder="Confirmation Password">
                                         </div>
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" name="remember"
@@ -82,7 +94,7 @@
                         <div
                             class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
                             <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden"
-                                style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/asset/argon-dashboard-pro/assets/img/signin-ill.jpg');background-size: cover;">
+                                style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');background-size: cover;">
                                 <span class="mask bg-gradient-primary opacity-6"></span>
                                 <h4 class="mt-5 text-white font-weight-bolder position-relative">"Nama Aplikasi"</h4>
                                 <p class="text-white position-relative">Tentang Aplikasi.</p>

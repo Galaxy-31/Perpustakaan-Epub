@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('asset/assets/img/apple-icon.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('asset/assets/img/favicon.png') }}">
     <title>
-        Login | Perpustakaan Epub
+        Login | Name App
     </title>
     <!--     Fonts and icons     -->
     <link href="{{ asset('asset/https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700') }}"
@@ -32,8 +32,8 @@
                         <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
                             <div class="card card-plain">
                                 <div class="card-header pb-0 text-start">
-                                    <h4 class="font-weight-bolder">Sign In</h4>
-                                    <p class="mb-0">Silahkan masukkan password dan email anda</p>
+                                    <h4 class="font-weight-bolder" class align="center">Sign In</h4>
+                                    <p class="mb-0" class align="center">Silahkan masukkan password dan email anda</p>
                                 </div>
                                 <div class="card-body">
                                     <form role="form" action="{{ route('login') }}" method="POST">
@@ -77,7 +77,7 @@
                         <div
                             class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
                             <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden"
-                                style="background-image: url('asset/../assets/img/team-2.jpg');background-size: cover;">
+                                style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');background-size: cover;">
                                 <span class="mask bg-gradient-primary opacity-6"></span>
                                 <h4 class="mt-5 text-white font-weight-bolder position-relative">"Nama Aplikasi"</h4>
                                 <p class="text-white position-relative">Tentang Aplikasi.</p>
